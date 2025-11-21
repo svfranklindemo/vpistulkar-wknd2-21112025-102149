@@ -422,7 +422,7 @@ function decorateButtons(element) {
       if (!a.querySelector('img')) {
         if (up.childNodes.length === 1 && (up.tagName === 'P' || up.tagName === 'DIV')) {
           a.className = 'button'; // default
-          up.classList.add('button-container');
+          up.classList.add('button-container', 'cta-button');
         }
         if (
           up.childNodes.length === 1
