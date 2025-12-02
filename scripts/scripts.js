@@ -278,6 +278,9 @@ export function decorateDMImages(main) {
         if(blockBeingDecorated && blockBeingDecorated.classList){
             blockName = Array.from(blockBeingDecorated.classList).find(className => className !== 'block');
         }
+       // Skip blocks that handle their own image decoration
+       const excludedBlocks = ['video', 'carousel', 'cards'];
+       if (isVideoAsset || excludedBlocks.includes(blockName)) return;
         if(blockName && blockName === 'dynamicmedia-image'){
           rotate = blockBeingDecorated?.children[3]?.textContent?.trim();
           flip = blockBeingDecorated?.children[4]?.textContent?.trim();
