@@ -275,7 +275,7 @@ export function decorateDMImages(main) {
         let rotate = '';
         let flip = '';
         let crop = '';
-        if(blockBeingDecorated){
+        if(blockBeingDecorated && blockBeingDecorated.classList){
             blockName = Array.from(blockBeingDecorated.classList).find(className => className !== 'block');
         }
         if(blockName && blockName === 'dynamicmedia-image'){
